@@ -138,6 +138,80 @@ def calculate_segment_churn(df: pd.DataFrame, segment_col: str) -> pd.DataFrame:
     seg['Avg_Monthly_Charges'] = seg['Avg_Monthly_Charges'].round(2)
     return seg.sort_values(by='Churn_Rate_Pct', ascending=False).reset_index(drop=True)
 
+def identify_high_risk_profiles(df: pd.DataFrame) -> pd.DataFrame:
+    """Identify and rank multi-attribute customer profiles by churn risk and exposed revenue."""
+    profiles = df.groupby(['Contract', 'InternetService', 'TechSupport'], observed=True).agg(
+        Customers=('customerID', 'count'),
+        Churned=('Churn_Numeric', 'sum'),
+        Monthly_Revenue=('MonthlyCharges', 'sum'),
+        Avg_Monthly_Charge=('MonthlyCharges', 'mean')
+    ).reset_index()
+    
+    profiles['Churn_Rate_Pct'] = (profiles['Churned'] / profiles['Customers'] * 100).round(2)
+    profiles['Revenue_At_Risk'] = (profiles['Churned'] * profiles['Avg_Monthly_Charge']).round(2)
+    
+    # Filter for statistically meaningful segments (>= 50 customers)
+    meaningful = profiles[profiles['Customers'] >= 50].sort_values(by='Churn_Rate_Pct', ascending=False).reset_index(drop=True)
+    return meaningful
+
+def evaluate_churn_baseline_model(df: pd.DataFrame) -> Dict[str, Any]:
+    """
+    Train a leakage-aware baseline logistic regression classifier to establish
+    predictive benchmark on held-out test data.
+    """
+    from sklearn.model_selection import train_test_split
+    from sklearn.linear_model import LogisticRegression
+    from sklearn.preprocessing import OneHotEncoder, StandardScaler
+    from sklearn.compose import ColumnTransformer
+    from sklearn.pipeline import Pipeline
+    from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, roc_auc_score
+    
+    feature_cols = [
+        'gender', 'SeniorCitizen', 'Partner', 'Dependents', 'tenure',
+        'PhoneService', 'MultipleLines', 'InternetService', 'OnlineSecurity',
+        'OnlineBackup', 'DeviceProtection', 'TechSupport', 'StreamingTV',
+        'StreamingMovies', 'Contract', 'PaperlessBilling', 'PaymentMethod',
+        'MonthlyCharges', 'TotalCharges'
+    ]
+    
+    X = df[feature_cols].copy()
+    y = df['Churn_Numeric'].values
+    
+    numeric_features = ['tenure', 'MonthlyCharges', 'TotalCharges']
+    categorical_features = [c for c in feature_cols if c not in numeric_features]
+    
+    preprocessor = ColumnTransformer(
+        transformers=[
+            ('num', StandardScaler(), numeric_features),
+            ('cat', OneHotEncoder(drop='first', sparse_output=False, handle_unknown='ignore'), categorical_features)
+        ]
+    )
+    
+    # Stratified 80/20 train/test split to preserve churn ratio
+    X_train, X_test, y_train, y_test = train_test_split(
+        X, y, test_size=0.20, random_state=42, stratify=y
+    )
+    
+    clf = Pipeline(steps=[
+        ('preprocessor', preprocessor),
+        ('classifier', LogisticRegression(max_iter=1000, random_state=42, class_weight='balanced'))
+    ])
+    
+    clf.fit(X_train, y_train)
+    y_pred = clf.predict(X_test)
+    y_proba = clf.predict_proba(X_test)[:, 1]
+    
+    return {
+        "sample_size_train": len(X_train),
+        "sample_size_test": len(X_test),
+        "test_churn_rate": float(y_test.mean()),
+        "accuracy": round(float(accuracy_score(y_test, y_pred)), 4),
+        "precision": round(float(precision_score(y_test, y_pred)), 4),
+        "recall": round(float(recall_score(y_test, y_pred)), 4),
+        "f1_score": round(float(f1_score(y_test, y_pred)), 4),
+        "roc_auc": round(float(roc_auc_score(y_test, y_proba)), 4)
+    }
+
 # ==============================================================================
 # 3. CORPORATE FINANCIAL & MARGIN PERFORMANCE METRICS
 # ==============================================================================
