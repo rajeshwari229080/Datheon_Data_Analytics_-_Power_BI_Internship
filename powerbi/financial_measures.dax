@@ -1,0 +1,115 @@
+// ==============================================================================
+// CORPORATE FINANCIAL & MARGIN PERFORMANCE — PRODUCTION DAX MEASURES
+// Table Home: FinancialFact (or _FinancialMeasures table)
+// ==============================================================================
+
+// ------------------------------------------------------------------------------
+// 1. CORE INCOME STATEMENT MEASURES
+// ------------------------------------------------------------------------------
+
+Gross Sales = 
+SUM(FinancialFact[Gross Sales])
+
+Total Discounts = 
+SUM(FinancialFact[Discounts])
+
+Net Sales = 
+SUM(FinancialFact[Sales])
+
+Total COGS = 
+SUM(FinancialFact[COGS])
+
+Total Profit = 
+SUM(FinancialFact[Profit])
+
+Total Units Sold = 
+SUM(FinancialFact[Units Sold])
+
+// ------------------------------------------------------------------------------
+// 2. MANAGERIAL MARGIN & EFFICIENCY RATIOS
+// ------------------------------------------------------------------------------
+
+Gross Profit Margin % = 
+DIVIDE([Total Profit], [Net Sales], 0)
+
+COGS Ratio % = 
+DIVIDE([Total COGS], [Net Sales], 0)
+
+Discount Concession Rate % = 
+DIVIDE([Total Discounts], [Gross Sales], 0)
+
+Average Realized Price = 
+DIVIDE([Net Sales], [Total Units Sold], 0)
+
+Average Unit Cost = 
+DIVIDE([Total COGS], [Total Units Sold], 0)
+
+// ------------------------------------------------------------------------------
+// 3. TIME INTELLIGENCE & TEMPORAL GROWTH
+// Requires Date relationship: FinancialFact[Date] -> DimDate[Date]
+// ------------------------------------------------------------------------------
+
+Net Sales Previous Year = 
+CALCULATE(
+    [Net Sales],
+    DATEADD(DimDate[Date], -1, YEAR)
+)
+
+YoY Net Sales Growth % = 
+DIVIDE(
+    [Net Sales] - [Net Sales Previous Year],
+    [Net Sales Previous Year],
+    0
+)
+
+Profit Previous Year = 
+CALCULATE(
+    [Total Profit],
+    DATEADD(DimDate[Date], -1, YEAR)
+)
+
+YoY Profit Growth % = 
+DIVIDE(
+    [Total Profit] - [Profit Previous Year],
+    [Profit Previous Year],
+    0
+)
+
+// ------------------------------------------------------------------------------
+// 4. WHAT-IF SCENARIO PARAMETERS & DYNAMIC SIMULATIONS
+// Power BI Modeling -> New Parameter -> Numeric Range
+// ------------------------------------------------------------------------------
+
+// Parameter 1: Discount Adjustment Slider (-30% to +30%, Step 5%, Default 0%)
+Discount Shift Value = 
+SELECTEDVALUE('Discount Shift'[Discount Shift], 0.0)
+
+// Parameter 2: COGS Inflation Slider (-20% to +20%, Step 2%, Default 0%)
+COGS Shift Value = 
+SELECTEDVALUE('COGS Shift'[COGS Shift], 0.0)
+
+// Simulated Dynamic Statements
+Simulated Discounts = 
+[Total Discounts] * (1.0 + [Discount Shift Value])
+
+Simulated Net Sales = 
+[Gross Sales] - [Simulated Discounts]
+
+Simulated COGS = 
+[Total COGS] * (1.0 + [COGS Shift Value])
+
+Simulated Operating Profit = 
+[Simulated Net Sales] - [Simulated COGS]
+
+Simulated Profit Margin % = 
+DIVIDE(
+    [Simulated Operating Profit],
+    [Simulated Net Sales],
+    0
+)
+
+Scenario Profit Dollar Variance = 
+[Simulated Operating Profit] - [Total Profit]
+
+Scenario Margin Point Variance = 
+[Simulated Profit Margin %] - [Gross Profit Margin %]
