@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RISK Master Analytics Suite — Enterprise Business Intelligence</title>
+  <meta name="description" content="Portfolio-grade Enterprise Data Analytics & Power BI Business Intelligence Suite built using the RISK Master Framework.">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+  <!-- Top Navigation Bar -->
+  <header class="header">
+    <div class="container header-inner">
+      <div class="logo-group">
+        <span class="logo-badge">RISK</span>
+        <div>
+          <div class="logo-title">Enterprise Analytics & BI Suite</div>
+          <div class="logo-subtitle">Cross-Functional Portfolio Platform</div>
+        </div>
+      </div>
+      <nav class="nav-links">
+        <a href="#overview" class="btn-link">Overview</a>
+        <a href="#superstore" class="btn-link">Superstore</a>
+        <a href="#powerbi" class="btn-link">Power BI</a>
+        <a href="#telco" class="btn-link">Telco Retention</a>
+        <a href="#financial" class="btn-link">Financial What-If</a>
+        <a href="https://github.com/rajeshwari229080/Datheon_Data_Analytics_-_Power_BI_Internship" target="_blank" rel="noopener noreferrer" class="btn-github">
+          <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          GitHub Repository
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="container">
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-card">
+        <span class="hero-pill">RISK MASTER FRAMEWORK</span>
+        <h1 class="hero-title">Executive Business Intelligence & Data Analytics Portal</h1>
+        <p class="hero-desc">
+          An evidence-driven, end-to-end analytical suite uniting four corporate projects: Superstore Retail EDA, Power BI Star Schema & DAX Modeling, IBM Telco Customer Retention, and Microsoft Financial Sample What-If Decision Simulation.
+        </p>
+
+        <!-- Metric Cards Grid -->
+        <div class="metrics-strip">
+          <div class="metric-card">
+            <div class="metric-label">Superstore Gross Sales</div>
+            <div class="metric-value">$2,297,201</div>
+            <div class="metric-sub">9,994 Orders • 12.47% Profit Margin</div>
+          </div>
+          <div class="metric-card success">
+            <div class="metric-label">Power BI Reconciliation</div>
+            <div class="metric-value">100% Match</div>
+            <div class="metric-sub">$0.00 Variance vs Python Fact Tables</div>
+          </div>
+          <div class="metric-card amber">
+            <div class="metric-label">Telco Churn Vulnerability</div>
+            <div class="metric-value">26.54%</div>
+            <div class="metric-sub">47.4% First-Year • $139k/mo At-Risk</div>
+          </div>
+          <div class="metric-card purple">
+            <div class="metric-label">Corporate Operating Profit</div>
+            <div class="metric-value">$16.89M</div>
+            <div class="metric-sub">$118.73M Net Sales • 14.23% Margin</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Navigation Tabs -->
+    <nav class="tabs-nav" aria-label="Project Navigation">
+      <button class="tab-btn active" data-tab="tab-overview">Executive Overview</button>
+      <button class="tab-btn" data-tab="tab-superstore">Superstore EDA</button>
+      <button class="tab-btn" data-tab="tab-powerbi">Power BI Star Schema</button>
+      <button class="tab-btn" data-tab="tab-telco">Telco Retention</button>
+      <button class="tab-btn" data-tab="tab-financial">Financial Simulator</button>
+      <button class="tab-btn" data-tab="tab-deliverables">Repository & Artifacts</button>
+    </nav>
+
+    <!-- Tab 1: Executive Overview -->
+    <section id="tab-overview" class="tab-pane active">
+      <div class="card" style="margin-bottom: 24px;">
+        <h2 class="card-title">Portfolio Architecture & The RISK Framework</h2>
+        <p class="card-desc">Structured across Requirements & Research, Investigation & Insight Discovery, Solution Engineering, and Knowledge Delivery & KPI Validation.</p>
+        <div style="text-align: center; margin: 16px 0;">
+          <img src="assets/portfolio_quadrant_light.svg" alt="Portfolio Architecture Quadrant" style="max-width: 100%; height: auto; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div class="card">
+          <h3 class="card-title">R — Requirements & Data Integrity</h3>
+          <p class="card-desc">Systematic cleansing, schema validation, and boundary verification across all datasets.</p>
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Dataset</th>
+                  <th>Raw Trap Discovered</th>
+                  <th>Remediation Applied</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="font-bold">Superstore</td>
+                  <td>Appended People/Returns data at row 9,994; missing ZIPs</td>
+                  <td>Extracted 9,994 clean orders; imputed VT ZIP 05401</td>
+                  <td class="text-success">Verified</td>
+                </tr>
+                <tr>
+                  <td class="font-bold">IBM Telco</td>
+                  <td>11 blank space strings in TotalCharges</td>
+                  <td>Zero tenure imputed to $0.00 charge float</td>
+                  <td class="text-success">Verified</td>
+                </tr>
+                <tr>
+                  <td class="font-bold">Financials</td>
+                  <td>Leading space in ' Sales'; missing Discount Bands</td>
+                  <td>Trimmed headers; normalized 53 rows to 'No Discount'</td>
+                  <td class="text-success">Verified</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3 class="card-title">K — Knowledge Delivery & Reconciliation</h3>
+          <p class="card-desc">Mathematical equivalence verified between Python data pipelines and Power BI Star Schema calculations.</p>
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Metric / Dimension</th>
+                  <th>Python Pipeline</th>
+                  <th>Power BI DAX</th>
+                  <th>Variance</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="font-bold">Gross Sales</td>
+                  <td>$2,297,200.86</td>
+                  <td>$2,297,200.86</td>
+                  <td class="text-success">$0.00 (0.0%)</td>
+                </tr>
+                <tr>
+                  <td class="font-bold">Total Profit</td>
+                  <td>$286,397.02</td>
+                  <td>$286,397.02</td>
+                  <td class="text-success">$0.00 (0.0%)</td>
+                </tr>
+                <tr>
+                  <td class="font-bold">Order Volume</td>
+                  <td>9,994 rows</td>
+                  <td>9,994 rows</td>
+                  <td class="text-success">0 rows (0.0%)</td>
+                </tr>
+                <tr>
+                  <td class="font-bold">Product SKUs</td>
+                  <td>1,862 items</td>
+                  <td>1,862 items</td>
+                  <td class="text-success">0 items (0.0%)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tab 2: Superstore EDA -->
+    <section id="tab-superstore" class="tab-pane">
+      <div class="grid-2">
+        <div class="card">
+          <h3 class="card-title">Four-Year Revenue & Profit Trajectory</h3>
+          <p class="card-desc">Monthly seasonal surge every Q4 (November–December) with underlying margin volatility.</p>
+          <div class="chart-container">
+            <canvas id="chartSuperMonthly"></canvas>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3 class="card-title">Sub-Category Profitability Breakdown</h3>
+          <p class="card-desc">Identifies value drivers (Copiers, Phones) vs deep loss leaders (Tables, Bookcases, Supplies).</p>
+          <div class="chart-container">
+            <canvas id="chartSubCat"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3 class="card-title">Strategic Insights: Tables & Bookcases Margin Erosion</h3>
+        <p class="card-desc">Key takeaways from exploratory data analysis and hypothesis testing:</p>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin-top: 12px;">
+          <div style="background: var(--bg-subtle); padding: 16px; border-radius: var(--radius-sm); border-left: 4px solid var(--danger-crimson);">
+            <div style="font-weight: 800; color: var(--text-main); margin-bottom: 4px;">Tables Sub-Category Loss</div>
+            <div style="font-size: 13px; color: var(--text-muted);">$17,725 cumulative net loss across 319 orders caused by deep promotional discounting above 20% threshold.</div>
+          </div>
+          <div style="background: var(--bg-subtle); padding: 16px; border-radius: var(--radius-sm); border-left: 4px solid var(--warning-amber);">
+            <div style="font-weight: 800; color: var(--text-main); margin-bottom: 4px;">Discount Cliff Effect</div>
+            <div style="font-size: 13px; color: var(--text-muted);">Transactions with discounts &gt; 20% generate negative gross margins in 84.2% of retail instances.</div>
+          </div>
+          <div style="background: var(--bg-subtle); padding: 16px; border-radius: var(--radius-sm); border-left: 4px solid var(--success-emerald);">
+            <div style="font-weight: 800; color: var(--text-main); margin-bottom: 4px;">Copiers Profit Engine</div>
+            <div style="font-size: 13px; color: var(--text-muted);">$55,618 in profit generated from only 68 transactions, delivering an industry-leading 36.5% margin.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tab 3: Power BI Star Schema -->
+    <section id="tab-powerbi" class="tab-pane">
+      <div class="card" style="margin-bottom: 24px;">
+        <h3 class="card-title">Star Schema Data Model Architecture</h3>
+        <p class="card-desc">1 Fact table (`FactOrders`) joined via 1-to-Many single-directional relationships to 4 normalized Dimension tables.</p>
+        <div style="background: var(--bg-subtle); padding: 20px; border-radius: var(--radius-md); font-family: var(--font-mono); font-size: 13px; line-height: 1.8;">
+          <div style="color: var(--primary-blue); font-weight: 700;">[DIMENSIONS] ────(1)─────────────(*)────> [FACT]</div>
+          <div>• DimCustomer (793 customers) ───────────&gt; FactOrders (9,994 rows)</div>
+          <div>• DimProduct (1,862 items) ───────────────&gt; FactOrders (Sales, Quantity, Discount, Profit)</div>
+          <div>• DimGeography (531 cities, 4 regions) ───&gt; FactOrders (Shipping Costs, Delivery Performance)</div>
+          <div>• DimDate (1,238 active transaction days) ─&gt; FactOrders (Time Intelligence: YTD, YoY, MoM)</div>
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div class="card">
+          <h3 class="card-title">Core DAX Business Measures</h3>
+          <p class="card-desc">Engineered DAX formulas powering executive reporting and time intelligence.</p>
+          <div style="background: #1E293B; color: #E2E8F0; padding: 16px; border-radius: var(--radius-sm); font-family: var(--font-mono); font-size: 12px; line-height: 1.6; overflow-x: auto;">
+            <div style="color: #38BDF8;">// Total Sales Metric</div>
+            <div>Total Sales = SUM(FactOrders[Sales])</div>
+            <br>
+            <div style="color: #38BDF8;">// Total Profit & Margin</div>
+            <div>Total Profit = SUM(FactOrders[Profit])</div>
+            <div>Profit Margin % = DIVIDE([Total Profit], [Total Sales], 0)</div>
+            <br>
+            <div style="color: #38BDF8;">// Year-over-Year Growth Measure</div>
+            <div>Sales YoY Growth % =</div>
+            <div>VAR PrevYear = CALCULATE([Total Sales], SAMEPERIODLASTYEAR(DimDate[FullDate]))</div>
+            <div>RETURN DIVIDE([Total Sales] - PrevYear, PrevYear, 0)</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3 class="card-title">Reconciliation Invariance Proof</h3>
+          <p class="card-desc">Validation testing ensures absolute alignment across all four dimensions.</p>
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Validation Dimension</th>
+                  <th>Python Pipeline</th>
+                  <th>Power BI DAX</th>
+                  <th>Zero-Tolerance Delta</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Technology Sales</td>
+                  <td>$836,154.03</td>
+                  <td>$836,154.03</td>
+                  <td class="text-success">$0.00 (Pass)</td>
+                </tr>
+                <tr>
+                  <td>Furniture Sales</td>
+                  <td>$741,999.80</td>
+                  <td>$741,999.80</td>
+                  <td class="text-success">$0.00 (Pass)</td>
+                </tr>
+                <tr>
+                  <td>Office Supplies Sales</td>
+                  <td>$719,047.03</td>
+                  <td>$719,047.03</td>
+                  <td class="text-success">$0.00 (Pass)</td>
+                </tr>
+                <tr>
+                  <td>West Region Profit</td>
+                  <td>$108,418.45</td>
+                  <td>$108,418.45</td>
+                  <td class="text-success">$0.00 (Pass)</td>
+                </tr>
+                <tr>
+                  <td>East Region Profit</td>
+                  <td>$91,522.78</td>
+                  <td>$91,522.78</td>
+                  <td class="text-success">$0.00 (Pass)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tab 4: Telco Customer Retention -->
+    <section id="tab-telco" class="tab-pane">
+      <div class="grid-2">
+        <div class="card">
+          <h3 class="card-title">Tenure Cohort Retention vs Churn Curve</h3>
+          <p class="card-desc">First-year vulnerability cliff where churn reaches 47.4% before stabilizing below 7%.</p>
+          <div class="chart-container">
+            <canvas id="chartCohort"></canvas>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3 class="card-title">Contract & Risk Segment Distribution</h3>
+          <p class="card-desc">Month-to-month contracts exhibit 42.7% churn vs 2.8% for Two-Year commitments.</p>
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Contract Type</th>
+                  <th>Total Subscribers</th>
+                  <th>Churn Count</th>
+                  <th>Churn Rate</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="font-bold">Month-to-Month</td>
+                  <td>3,875</td>
+                  <td>1,655</td>
+                  <td class="text-danger">42.71%</td>
+                </tr>
+                <tr>
+                  <td class="font-bold">One Year</td>
+                  <td>1,473</td>
+                  <td>166</td>
+                  <td class="text-warning">11.27%</td>
+                </tr>
+                <tr>
+                  <td class="font-bold">Two Year</td>
+                  <td>1,695</td>
+                  <td>48</td>
+                  <td class="text-success">2.83%</td>
+                </tr>
+                <tr style="background: var(--bg-subtle);">
+                  <td class="font-bold">Enterprise Total</td>
+                  <td>7,043</td>
+                  <td>1,869</td>
+                  <td class="font-bold">26.54%</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3 class="card-title">Executive Churn Intervention Strategies</h3>
+        <p class="card-desc">Targeted retention plays calculated to protect $139,130 in monthly recurring revenue:</p>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; margin-top: 12px;">
+          <div style="background: var(--bg-subtle); padding: 16px; border-radius: var(--radius-sm); border-top: 3px solid var(--primary-blue);">
+            <div style="font-weight: 800; color: var(--text-main); margin-bottom: 4px;">1. Onboarding Protection Window</div>
+            <div style="font-size: 13px; color: var(--text-muted);">Provide high-touch technical onboarding during months 1–6 to curb early drop-offs before tenure maturity.</div>
+          </div>
+          <div style="background: var(--bg-subtle); padding: 16px; border-radius: var(--radius-sm); border-top: 3px solid var(--success-emerald);">
+            <div style="font-weight: 800; color: var(--text-main); margin-bottom: 4px;">2. Fiber Optic Security Bundling</div>
+            <div style="font-size: 13px; color: var(--text-muted);">Subscribers with Tech Support and Online Security exhibit churn under 16% compared to 41.7% without value-add bundles.</div>
+          </div>
+          <div style="background: var(--bg-subtle); padding: 16px; border-radius: var(--radius-sm); border-top: 3px solid var(--purple-accent);">
+            <div style="font-weight: 800; color: var(--text-main); margin-bottom: 4px;">3. Automated Payment Incentive</div>
+            <div style="font-size: 13px; color: var(--text-muted);">Electronic check payers churn at 45.3%; incentivize transition to ACH and credit card auto-pay via a $3 monthly billing discount.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tab 5: Financial What-If Simulator -->
+    <section id="tab-financial" class="tab-pane">
+      <div class="simulator-box">
+        <h3 class="card-title" style="margin-bottom: 4px;">Real-Time Scenario Financial Simulator</h3>
+        <p class="card-desc">Simulate corporate operating margins by adjusting commercial discount bands and COGS inflation.</p>
+
+        <div class="grid-2" style="margin-bottom: 16px;">
+          <div class="slider-group">
+            <div class="slider-header">
+              <span>Promotional Discount Adjustment</span>
+              <span id="valDiscount" style="color: var(--primary-blue);">0%</span>
+            </div>
+            <input type="range" id="sliderDiscount" min="-50" max="50" value="0" step="5">
+            <div style="display: flex; justify-content: space-between; font-size: 11px; color: var(--text-dim); margin-top: 4px;">
+              <span>-50% Strict Pricing</span>
+              <span>Baseline</span>
+              <span>+50% Aggressive Promos</span>
+            </div>
+          </div>
+
+          <div class="slider-group">
+            <div class="slider-header">
+              <span>COGS Supply Chain Inflation</span>
+              <span id="valCogs" style="color: var(--primary-blue);">0%</span>
+            </div>
+            <input type="range" id="sliderCogs" min="-20" max="30" value="0" step="2">
+            <div style="display: flex; justify-content: space-between; font-size: 11px; color: var(--text-dim); margin-top: 4px;">
+              <span>-20% Sourcing Efficiency</span>
+              <span>Baseline</span>
+              <span>+30% Inflation Surge</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Simulated Outputs -->
+        <div class="metrics-strip">
+          <div class="metric-card">
+            <div class="metric-label">Simulated Net Sales</div>
+            <div class="metric-value" id="simNetSales">$118.73M</div>
+            <div class="metric-sub">Base: $118.73M</div>
+          </div>
+          <div class="metric-card success">
+            <div class="metric-label">Simulated Operating Profit</div>
+            <div class="metric-value" id="simProfit">$16.89M</div>
+            <div class="metric-sub" id="simDelta">+$0.00M vs Baseline</div>
+          </div>
+          <div class="metric-card purple">
+            <div class="metric-label">Simulated Profit Margin</div>
+            <div class="metric-value" id="simMargin">14.23%</div>
+            <div class="metric-sub">Base Margin: 14.23%</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3 class="card-title">Corporate Revenue & Cost Waterfall Breakdown</h3>
+        <p class="card-desc">Baseline accounting progression from Gross Sales down to Net Operating Profit ($ Millions).</p>
+        <div class="chart-container">
+          <canvas id="chartWaterfall"></canvas>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tab 6: Repository & Deliverables -->
+    <section id="tab-deliverables" class="tab-pane">
+      <div class="grid-2">
+        <div class="card">
+          <h3 class="card-title">Reproducible Jupyter Notebooks</h3>
+          <p class="card-desc">End-to-end executed notebooks stored in the repository root:</p>
+          <ul style="list-style-type: none; line-height: 2; font-size: 14px;">
+            <li>📓 <a href="https://github.com/rajeshwari229080/Datheon_Data_Analytics_-_Power_BI_Internship/blob/main/notebooks/01_superstore_eda.ipynb" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); font-weight: 600;">01_superstore_eda.ipynb</a> — Retail EDA, Distributions & Loss Leaders</li>
+            <li>📓 <a href="https://github.com/rajeshwari229080/Datheon_Data_Analytics_-_Power_BI_Internship/blob/main/notebooks/02_powerbi_data_prep_star_schema.ipynb" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); font-weight: 600;">02_powerbi_data_prep_star_schema.ipynb</a> — Dimension Modeling & Star Schema</li>
+            <li>📓 <a href="https://github.com/rajeshwari229080/Datheon_Data_Analytics_-_Power_BI_Internship/blob/main/notebooks/03_ibm_telco_churn_cohort_analysis.ipynb" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); font-weight: 600;">03_ibm_telco_churn_cohort_analysis.ipynb</a> — Customer Churn & Cohort Heatmaps</li>
+            <li>📓 <a href="https://github.com/rajeshwari229080/Datheon_Data_Analytics_-_Power_BI_Internship/blob/main/notebooks/04_financial_sample_modeling_whatif.ipynb" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); font-weight: 600;">04_financial_sample_modeling_whatif.ipynb</a> — Waterfall Profitability & What-If Engine</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3 class="card-title">Automated Quality Assurance</h3>
+          <p class="card-desc">Comprehensive test suites enforcing calculation invariance and schema integrity:</p>
+          <div style="background: var(--bg-subtle); padding: 16px; border-radius: var(--radius-sm); font-family: var(--font-mono); font-size: 13px; line-height: 1.8;">
+            <div class="text-success">✔ tests/test_data_cleaning.py (6/6 Passed)</div>
+            <div class="text-success">✔ tests/test_powerbi_reconciliation.py (6/6 Passed)</div>
+            <div class="text-success">✔ tests/test_telco_churn.py (4/4 Passed)</div>
+            <div class="text-success">✔ tests/test_financial_sample.py (4/4 Passed)</div>
+            <div style="margin-top: 8px; font-weight: 700; color: var(--text-main);">Summary: 20 passed unit & integration tests</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3 class="card-title">Production Git Architecture</h3>
+        <p class="card-desc">Pushed to GitHub under a structured semantic commit history:</p>
+        <div style="background: #0F172A; color: #E2E8F0; padding: 16px; border-radius: var(--radius-sm); font-family: var(--font-mono); font-size: 12px; line-height: 1.6;">
+          <div>$ git log --oneline -n 6</div>
+          <div style="color: #38BDF8;">feat(docs): integrate light-theme infographics and executive post</div>
+          <div style="color: #38BDF8;">chore(license): add standard open-source MIT license</div>
+          <div style="color: #38BDF8;">docs(kpi): generate final executive audit and reconciliation report</div>
+          <div style="color: #38BDF8;">docs(summary): compile end-to-end KPI summary and insights</div>
+          <div style="color: #38BDF8;">test(qa): implement comprehensive integration test suite</div>
+          <div style="color: #38BDF8;">feat(visuals): produce publication-ready visual assets</div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-links">
+        <a href="https://github.com/rajeshwari229080/Datheon_Data_Analytics_-_Power_BI_Internship" target="_blank" rel="noopener noreferrer">GitHub Repository</a>
+        <a href="https://github.com/rajeshwari229080/Datheon_Data_Analytics_-_Power_BI_Internship/blob/main/LICENSE" target="_blank" rel="noopener noreferrer">MIT License</a>
+        <a href="https://github.com/rajeshwari229080/Datheon_Data_Analytics_-_Power_BI_Internship/blob/main/LINKEDIN_POST.md" target="_blank" rel="noopener noreferrer">LinkedIn Showcase</a>
+      </div>
+      <div>Datheon Data Analytics & Power BI Internship • RISK Master Intelligence Framework</div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

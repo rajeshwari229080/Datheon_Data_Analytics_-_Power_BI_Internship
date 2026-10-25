@@ -7,11 +7,18 @@
 [![Quality Assurance: Pytest Verified](https://img.shields.io/badge/Test_Suite-20_Passed-emerald?style=for-the-badge&logo=pytest)](tests/)
 [![Data Pipeline: Deterministic & Reconciled](https://img.shields.io/badge/Data_Reconciliation-Zero_Variance-blue?style=for-the-badge&logo=python)](reports/reconciliation_report.md)
 [![BI Architecture: Kimball Star Schema](https://img.shields.io/badge/Power_BI-Star_Schema_DAX-gold?style=for-the-badge&logo=powerbi)](powerbi/)
+[![Live Analytics Portal: GitHub Pages](https://img.shields.io/badge/Live_Portal-GitHub_Pages-2563EB?style=for-the-badge&logo=github)](https://rajeshwari229080.github.io/Datheon_Data_Analytics_-_Power_BI_Internship/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blueviolet?style=for-the-badge)](LICENSE)
 [![LinkedIn Showcase](https://img.shields.io/badge/LinkedIn_Post-Ready-0A66C2?style=for-the-badge&logo=linkedin)](LINKEDIN_POST.md)
 
 <p align="center">
   <b>An enterprise, evidence-driven business intelligence and advanced data analytics suite integrating four commercial projects across retail merchandising, customer churn cohort dynamics, corporate financial accounting, and executive dashboard engineering.</b>
+</p>
+
+<p align="center">
+  <a href="https://rajeshwari229080.github.io/Datheon_Data_Analytics_-_Power_BI_Internship/">
+    <b>🚀 Launch Live Interactive Analytics Portal & Simulation Engine</b>
+  </a>
 </p>
 
 </div>
@@ -46,7 +53,10 @@ risk-data-intelligence-suite/
 ├── LICENSE                                 # Open-Source MIT License
 ├── requirements.txt                        # Pinned analytical and testing dependencies
 ├── .gitignore                              # Clean Python, IDE, and temporary cache ignores
-├── docs/
+├── docs/                                   # GitHub Pages Web Application Portal
+│   ├── index.html                          # Executive Web Portal Interface
+│   ├── styles.css                          # Modern Light-Theme Corporate Design System
+│   ├── app.js                              # Chart.js Visualizations & What-If Simulation Engine
 │   └── assets/                             # High-Resolution Light-Theme Vector & PNG Assets
 │       ├── hero_banner_light.svg / .png
 │       ├── risk_framework_light.svg / .png
