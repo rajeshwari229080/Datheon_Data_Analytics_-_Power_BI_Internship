@@ -133,8 +133,8 @@ def clean_financial() -> pd.DataFrame:
     df = load_raw_financial()
     df.columns = [c.strip() for c in df.columns]
     
-    # Fill Discount Band
-    df['Discount Band'] = df['Discount Band'].fillna('None')
+    # Fill Discount Band with 'No Discount' (avoiding literal 'None' which pandas parses as NaN)
+    df['Discount Band'] = df['Discount Band'].fillna('No Discount').replace({'None': 'No Discount'})
     
     # Type casts
     float_cols = ['Units Sold', 'Manufacturing Price', 'Sale Price', 'Gross Sales', 'Discounts', 'Sales', 'COGS', 'Profit']
