@@ -261,6 +261,23 @@ def aggregate_financial_by_dimension(df: pd.DataFrame, dimension: str) -> pd.Dat
     
     return agg.sort_values(by='Net_Sales', ascending=False).reset_index(drop=True)
 
+def generate_financial_waterfall_data(df: pd.DataFrame) -> pd.DataFrame:
+    """Construct income statement waterfall bridge data."""
+    gross = float(df['Gross Sales'].sum())
+    disc = float(df['Discounts'].sum())
+    cogs = float(df['COGS'].sum())
+    profit = float(df['Profit'].sum())
+    
+    waterfall = pd.DataFrame([
+        {"Step": "1. Gross Sales", "Amount": gross, "Type": "Absolute"},
+        {"Step": "2. Less: Discounts", "Amount": -disc, "Type": "Relative"},
+        {"Step": "3. Net Revenue", "Amount": gross - disc, "Type": "Subtotal"},
+        {"Step": "4. Less: COGS", "Amount": -cogs, "Type": "Relative"},
+        {"Step": "5. Operating Profit", "Amount": profit, "Type": "Total"}
+    ])
+    waterfall['Amount'] = waterfall['Amount'].round(2)
+    return waterfall
+
 def simulate_financial_scenario(
     df: pd.DataFrame,
     discount_pct_delta: float = 0.0,
