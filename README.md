@@ -1,12 +1,31 @@
+<div align="center">
+
 # RISK Master Framework — Enterprise Data Analytics & Business Intelligence Suite
 
-[![Quality Assurance: Pytest Verified](https://img.shields.io/badge/Test_Suite-20_Passed-emerald?style=for-the-badge&logo=pytest)](file:///tests/)
-[![Data Pipeline: Deterministic & Reconciled](https://img.shields.io/badge/Data_Reconciliation-Zero_Variance-blue?style=for-the-badge&logo=python)](file:///reports/reconciliation_report.md)
-[![BI Architecture: Kimball Star Schema](https://img.shields.io/badge/Power_BI-Star_Schema_DAX-gold?style=for-the-badge&logo=powerbi)](file:///powerbi/)
+<img src="docs/assets/hero_banner_light.png" alt="RISK Master Analytics Framework Banner" width="100%">
 
-An enterprise, evidence-driven business intelligence and advanced data analytics suite integrating four commercial projects across retail merchandising, customer churn cohort dynamics, corporate financial accounting, and executive dashboard engineering.
+[![Quality Assurance: Pytest Verified](https://img.shields.io/badge/Test_Suite-20_Passed-emerald?style=for-the-badge&logo=pytest)](tests/)
+[![Data Pipeline: Deterministic & Reconciled](https://img.shields.io/badge/Data_Reconciliation-Zero_Variance-blue?style=for-the-badge&logo=python)](reports/reconciliation_report.md)
+[![BI Architecture: Kimball Star Schema](https://img.shields.io/badge/Power_BI-Star_Schema_DAX-gold?style=for-the-badge&logo=powerbi)](powerbi/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blueviolet?style=for-the-badge)](LICENSE)
+[![LinkedIn Showcase](https://img.shields.io/badge/LinkedIn_Post-Ready-0A66C2?style=for-the-badge&logo=linkedin)](LINKEDIN_POST.md)
 
-Built upon the **RISK Framework**:
+<p align="center">
+  <b>An enterprise, evidence-driven business intelligence and advanced data analytics suite integrating four commercial projects across retail merchandising, customer churn cohort dynamics, corporate financial accounting, and executive dashboard engineering.</b>
+</p>
+
+</div>
+
+---
+
+## 1. The RISK Master Analytical Framework
+
+The entire analytics lifecycle follows the **RISK Framework**, ensuring that every calculation is forensically audited, systematically engineered, and mathematically reconciled against real-world business constraints:
+
+<div align="center">
+  <img src="docs/assets/risk_framework_light.png" alt="The RISK Analytical Framework" width="100%">
+</div>
+
 - **R — Requirements & Research**: Non-destructive data profiling, source inspection, schema validation, and anomaly discovery.
 - **I — Investigation & Insight Discovery**: Descriptive statistics, elasticity analysis, cohort survival modeling, and managerial accounting decomposition.
 - **S — Solution Engineering**: Modular Python data pipelines, automated Pytest testing suites, and normalized Kimball Star-Schema models.
@@ -14,13 +33,25 @@ Built upon the **RISK Framework**:
 
 ---
 
-## 1. Portfolio Architectural Overview
+## 2. Portfolio Architectural Overview
+
+<div align="center">
+  <img src="docs/assets/portfolio_quadrant_light.png" alt="Four Integrated Business Intelligence Projects" width="100%">
+</div>
 
 ```
 risk-data-intelligence-suite/
 ├── README.md                               # Consolidated Master Architecture & Executive Report
+├── LINKEDIN_POST.md                        # Official LinkedIn Announcement & Portfolio Copy
+├── LICENSE                                 # Open-Source MIT License
 ├── requirements.txt                        # Pinned analytical and testing dependencies
 ├── .gitignore                              # Clean Python, IDE, and temporary cache ignores
+├── docs/
+│   └── assets/                             # High-Resolution Light-Theme Vector & PNG Assets
+│       ├── hero_banner_light.svg / .png
+│       ├── risk_framework_light.svg / .png
+│       ├── portfolio_quadrant_light.svg / .png
+│       └── linkedin_showcase_light.svg / .png
 ├── data/
 │   ├── raw/                                # Raw, immutable source files from repository
 │   │   ├── superstore_sales.csv            # 10,800 raw lines (including appended sheets)
@@ -62,7 +93,8 @@ risk-data-intelligence-suite/
 │   ├── churn_retention_recommendations.md  # Subscriber retention playbook & risk segment ledger
 │   ├── financial_kpi_report.md             # Corporate income statement report & Enterprise deficit
 │   ├── reconciliation_report.md            # Zero-variance Python vs. Power BI reconciliation
-│   └── limitations.md                      # Transparent methodological controls & disclaimers
+│   ├── limitations.md                      # Transparent methodological controls & disclaimers
+│   └── release_audit.md                    # Production release QA audit ledger
 ├── powerbi/                                # Native Power BI Specifications & DAX Models
 │   ├── superstore_model.md                 # Star-schema relationships, keys, and cardinalities
 │   ├── superstore_measures.dax             # Production DAX measures with continuous time-intelligence
@@ -81,23 +113,23 @@ risk-data-intelligence-suite/
 
 ---
 
-## 2. Forensic Anomaly Audit & Data Engineering Discoveries
+## 3. Forensic Anomaly Audit & Data Engineering Discoveries
 
 During initial data inspection under Phase 1 of the RISK framework, real-world data engineering anomalies were forensically isolated and resolved:
 
 | Dataset | Raw Discovered Anomaly | Business Impact | Deterministic Resolution Protocol |
 | :--- | :--- | :--- | :--- |
-| **Superstore Sales** | Rows 9,994 to 10,799 contain concatenated lookup tables (`Person/Region` and `Returned/Order ID`). | Blind date/numeric conversions fail with 806 null rows; duplicates inflated by 504. | Deconstructed into three clean artifacts: `superstore_cleaned.csv` (9,994 orders), `superstore_people.csv` (4 territory managers), and `superstore_returns.csv` (296 unique returns). |
+| **Superstore Sales** | Rows 9,994 to 10,799 contain appended `People` and `Returns` tables. | Blind date/numeric conversions fail with 806 null rows; duplicates inflated by 504. | Deconstructed into three clean artifacts: `superstore_cleaned.csv` (9,994 orders), `superstore_people.csv` (4 territory managers), and `superstore_returns.csv` (296 unique returns). |
 | **Superstore Postal Codes** | 11 records in Burlington, Vermont have missing postal codes. | Map visual holes and broken geographic hierarchy. | Imputed with standard Burlington ZIP code `05401`. |
 | **Telco Customer Churn** | `TotalCharges` stored as text with 11 whitespace strings (`' '`). | Fails numeric type-casting; causes pipeline crashes. | Cross-tabulation proved all 11 records have `tenure == 0` (brand-new accounts). Imputed with `0.0` and cast to `float64`. |
 | **Financial Sample** | Column `' Sales'` contains a leading whitespace. `Discount Band` has 53 nulls. | Field lookup errors; `pd.read_csv` treats `'None'` as `NaN`. | Whitespace stripped across all columns; missing discount bands standardized to `'No Discount'`. |
 
 ---
 
-## 3. Four Integrated BI Projects: Findings & Deliverables
+## 4. Four Integrated BI Projects: Findings & Deliverables
 
 ### Task 1 — Superstore Retail Sales EDA
-- **Deliverable**: [`notebooks/01_superstore_eda.ipynb`](file:///notebooks/01_superstore_eda.ipynb) | [`reports/executive_findings.md`](file:///reports/executive_findings.md)
+- **Deliverable**: [`notebooks/01_superstore_eda.ipynb`](notebooks/01_superstore_eda.ipynb) | [`reports/executive_findings.md`](reports/executive_findings.md)
 - **Executive Findings Summary**:
   1. **The 20% Discount Cliff**: Discounts between 0% and 10% produce healthy margins (+27.9% and +14.8%). Discounts exceeding 20% cause severe profit destruction (-17.9% for 21–50% discounts, -87.8% for >50% discounts), destroying \$64,346 in profit.
   2. **Severe Sub-Category Loss Leaders**: Furniture generated only \$18,451 profit (2.5% margin), dragged down by Tables (-\$17,725 loss) and Bookcases (-\$3,473 loss).
@@ -108,7 +140,7 @@ During initial data inspection under Phase 1 of the RISK framework, real-world d
 ---
 
 ### Task 2 — Interactive Power BI Sales & Profit Dashboard
-- **Deliverables**: [`powerbi/superstore_measures.dax`](file:///powerbi/superstore_measures.dax) | [`powerbi/superstore_model.md`](file:///powerbi/superstore_model.md) | [`powerbi/superstore_dashboard_spec.md`](file:///powerbi/superstore_dashboard_spec.md) | [`reports/reconciliation_report.md`](file:///reports/reconciliation_report.md)
+- **Deliverables**: [`powerbi/superstore_measures.dax`](powerbi/superstore_measures.dax) | [`powerbi/superstore_model.md`](powerbi/superstore_model.md) | [`powerbi/superstore_dashboard_spec.md`](powerbi/superstore_dashboard_spec.md) | [`reports/reconciliation_report.md`](reports/reconciliation_report.md)
 - **Dimensional Modeling Architecture**:
   - Normalized Star Schema: `FactSales` (9,994 rows), `DimDate` (1,826 days), `DimCustomer` (793 customers), `DimProduct` (1,862 products), `DimGeography` (631 postal codes).
   - 100% referential integrity with zero orphan records.
@@ -123,7 +155,7 @@ During initial data inspection under Phase 1 of the RISK framework, real-world d
 ---
 
 ### Task 3 — Customer Cohort & Churn Analytics (IBM Telco)
-- **Deliverables**: [`notebooks/03_customer_churn_analysis.ipynb`](file:///notebooks/03_customer_churn_analysis.ipynb) | [`reports/churn_retention_recommendations.md`](file:///reports/churn_retention_recommendations.md)
+- **Deliverables**: [`notebooks/03_customer_churn_analysis.ipynb`](notebooks/03_customer_churn_analysis.ipynb) | [`reports/churn_retention_recommendations.md`](reports/churn_retention_recommendations.md)
 - **Portfolio Baseline**: 7,043 customers, 26.54% churn rate (1,869 churned), Monthly Revenue Exposure = \$139,130.85/month (\$1.67M ARR).
 - **Key Discoveries**:
   1. *Contract Structure*: Month-to-month contracts churn at **42.71%**, compared to 11.27% for One-Year and 2.83% for Two-Year contracts ($15.1\times$ risk factor).
@@ -139,7 +171,7 @@ During initial data inspection under Phase 1 of the RISK framework, real-world d
 ---
 
 ### Task 4 — Corporate Financial & Margin Performance
-- **Deliverables**: [`notebooks/04_financial_analysis.ipynb`](file:///notebooks/04_financial_analysis.ipynb) | [`powerbi/financial_measures.dax`](file:///powerbi/financial_measures.dax) | [`reports/financial_kpi_report.md`](file:///reports/financial_kpi_report.md)
+- **Deliverables**: [`notebooks/04_financial_analysis.ipynb`](notebooks/04_financial_analysis.ipynb) | [`powerbi/financial_measures.dax`](powerbi/financial_measures.dax) | [`reports/financial_kpi_report.md`](reports/financial_kpi_report.md)
 - **Consolidated Financial Statements**:
   - Gross Sales: \$127,931,598.50 ($100.0\%$)
   - Less Discounts: (\$9,205,248.24) ($7.20\%$ of Gross)
@@ -154,7 +186,17 @@ During initial data inspection under Phase 1 of the RISK framework, real-world d
 
 ---
 
-## 4. Reconciliation Matrix: Python vs. Power BI Model
+## 5. LinkedIn Showcase & Presentation Asset
+
+A publication-ready visual infographic is provided in [`docs/assets/linkedin_showcase_light.png`](docs/assets/linkedin_showcase_light.png) alongside complete post copy in [`LINKEDIN_POST.md`](LINKEDIN_POST.md):
+
+<div align="center">
+  <img src="docs/assets/linkedin_showcase_light.png" alt="LinkedIn Executive Showcase Infographic" width="100%">
+</div>
+
+---
+
+## 6. Reconciliation Matrix: Python vs. Power BI Model
 
 All core financial, sales, and churn metrics were independently cross-audited between Python analytical scripts and the Power BI Star Schema data model:
 
@@ -173,7 +215,7 @@ All core financial, sales, and churn metrics were independently cross-audited be
 
 ---
 
-## 5. Automated Verification & Testing Suite
+## 7. Automated Verification & Testing Suite
 
 The repository contains an automated Pytest test suite covering schema validation, data cleaning assertions, mathematical invariance, star-schema joins, and end-to-end integration:
 
@@ -191,7 +233,7 @@ pytest tests/ -v
 
 ---
 
-## 6. Execution & Reproducibility Guide
+## 8. Execution & Reproducibility Guide
 
 ### Environment Setup
 ```bash
@@ -223,7 +265,12 @@ jupyter nbconvert --to notebook --execute notebooks/04_financial_analysis.ipynb 
 
 ---
 
-## 7. Methodological Controls & Disclaimers
+## 9. Methodological Controls & Disclaimers
 1. **Cross-Sectional vs. Longitudinal Panels**: Telco churn analysis represents a cross-sectional snapshot. Tenure cohorts reflect survivor distributions rather than true multi-year panel survival curves.
 2. **Correlation vs. Causation**: Observed associations (e.g., electronic check and fiber optic churn) reflect customer segment profiles and must not be interpreted as proven causal drivers without controlled A/B testing.
 3. **No Fabricated Budgets**: Because `financial_sample.xlsx` does not contain target or budget fields, performance is benchmarked against historical prior-year periods and simulated via parameterized What-If scenarios.
+
+---
+
+## 10. License & Copyright
+This project is open-source under the [MIT License](LICENSE). Copyright © 2026 rajeshwari229080.

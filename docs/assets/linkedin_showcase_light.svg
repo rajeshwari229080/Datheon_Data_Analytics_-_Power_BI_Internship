@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675">
+  <defs>
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#F8FAFC"/>
+    </linearGradient>
+    <linearGradient id="headerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1E3A8A"/>
+      <stop offset="100%" stop-color="#2563EB"/>
+    </linearGradient>
+    <filter id="cardShadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#0F172A" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="675" fill="#F1F5F9"/>
+  
+  <!-- Outer Card Frame -->
+  <rect x="30" y="30" width="1140" height="615" rx="18" fill="url(#cardGrad)" stroke="#CBD5E1" stroke-width="2" filter="url(#cardShadow)"/>
+
+  <!-- Top Accent Ribbon -->
+  <rect x="30" y="30" width="1140" height="10" rx="5" fill="url(#headerGrad)"/>
+
+  <!-- LinkedIn Card Header -->
+  <rect x="65" y="60" width="220" height="28" rx="6" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="1"/>
+  <text x="75" y="79" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" fill="#1D4ED8" letter-spacing="1">PORTFOLIO SHOWCASE</text>
+
+  <rect x="295" y="60" width="180" height="28" rx="6" fill="#ECFDF5" stroke="#A7F3D0" stroke-width="1"/>
+  <text x="305" y="79" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" fill="#047857" letter-spacing="0.5">20 PYTESTS PASSED</text>
+
+  <text x="65" y="125" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="30" font-weight="800" fill="#0F172A">Enterprise Data Analytics &amp; Business Intelligence Suite</text>
+  <text x="65" y="155" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="500" fill="#475569">Evidence-Driven Commercial Analytics Across 4 Real-World Datasets Using The RISK Framework</text>
+
+  <!-- 4 Feature Mini-Cards -->
+  <!-- Card 1 -->
+  <g filter="url(#cardShadow)">
+    <rect x="65" y="185" width="250" height="235" rx="12" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5"/>
+    <rect x="65" y="185" width="250" height="5" fill="#2563EB" rx="2.5"/>
+    <text x="85" y="215" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" fill="#2563EB">1. RETAIL SALES EDA</text>
+    <text x="85" y="240" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="16" font-weight="800" fill="#0F172A">Superstore Sales</text>
+    <text x="85" y="270" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#475569">• $2.30M Sales, $286k Profit</text>
+    <text x="85" y="295" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#475569">• 20% Discount Cliff</text>
+    <text x="85" y="320" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#475569">• Table Loss Leaders (-$17.7k)</text>
+    <text x="85" y="345" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#475569">• Q4 Seasonality Surge (31%)</text>
+    <text x="85" y="390" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" fill="#059669">✓ 01_superstore_eda.ipynb</text>
+  </g>
+
+  <!-- Card 2 -->
+  <g filter="url(#cardShadow)">
+    <rect x="335" y="185" width="250" height="235" rx="12" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5"/>
+    <rect x="335" y="185" width="250" height="5" fill="#059669" rx="2.5"/>
+    <text x="355" y="215" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" fill="#059669">2. POWER BI MODEL</text>
+    <text x="355" y="240" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="16" font-weight="800" fill="#0F172A">Star Schema &amp; DAX</text>
+    <text x="355" y="270" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#475569">• FactSales (9,994 line items)</text>
+    <text x="355" y="295" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#475569">• 4 Conformed Dimensions</text>
+    <text x="355" y="320" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#475569">• Continuous DimDate (1,826d)</text>
+    <text x="355" y="345" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#475569">• YoY Time-Intelligence DAX</text>
+    <text x="355" y="390" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" fill="#059669">✓ $0.00 Variance Reconciled</text>
+  </g>
+
+  <!-- Card 3 -->
+  <g filter="url(#cardShadow)">
+    <rect x="605" y="185" width="250" height="235" rx="12" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5"/>
+    <rect x="605" y="185" width="250" height="5" fill="#D97706" rx="2.5"/>
+    <text x="625" y="215" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" fill="#D97706">3. TELCO COHORTS</text>
+    <text x="625" y="240" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="16" font-weight="800" fill="#0F172A">Retention &amp; Churn</text>
+    <text x="625" y="270" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#475569">• 7,043 Accounts Audited</text>
+    <text x="625" y="295" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#475569">• 47.4% 1st-Year Churn Spike</text>
+    <text x="625" y="320" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#475569">• Fiber Tech Support Deficit</text>
+    <text x="625" y="345" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#475569">• 3 Commercial Playbooks</text>
+    <text x="625" y="390" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" fill="#059669">✓ +$251.3k ARR Retention Benefit</text>
+  </g>
+
+  <!-- Card 4 -->
+  <g filter="url(#cardShadow)">
+    <rect x="875" y="185" width="260" height="235" rx="12" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5"/>
+    <rect x="875" y="185" width="260" height="5" fill="#7C3AED" rx="2.5"/>
+    <text x="895" y="215" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" fill="#7C3AED">4. CORPORATE FINANCE</text>
+    <text x="895" y="240" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="16" font-weight="800" fill="#0F172A">Margins &amp; What-If</text>
+    <text x="895" y="270" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#475569">• Gross $127.9M -&gt; Profit $16.9M</text>
+    <text x="895" y="295" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#475569">• Enterprise Deficit (-$617k)</text>
+    <text x="895" y="320" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#475569">• Government 67% Profit Engine</text>
+    <text x="895" y="345" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#475569">• COGS Absorption: 85.8%</text>
+    <text x="895" y="390" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" fill="#059669">✓ Dynamic Parameter DAX</text>
+  </g>
+
+  <!-- Bottom Executive Summary Banner -->
+  <rect x="65" y="445" width="1070" height="150" rx="12" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1.5"/>
+  <text x="95" y="480" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="16" font-weight="800" fill="#0F172A">Enterprise Engineering Rigor &amp; Verification</text>
+  
+  <text x="95" y="515" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#475569">• <tspan font-weight="700" fill="#0F172A">Forensic Anomaly Discovery:</tspan> Resolved appended Excel sheets, missing Burlington VT ZIPs, and blank TotalCharges</text>
+  <text x="95" y="540" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#475569">• <tspan font-weight="700" fill="#0F172A">Kimball Star Schema:</tspan> Conformed FactSales, DimDate, DimCustomer, DimProduct, DimGeography tables</text>
+  <text x="95" y="565" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#475569">• <tspan font-weight="700" fill="#0F172A">Production Codebase:</tspan> Modular Python src/, 4 executed Jupyter Notebooks, 17 high-DPI figures, and 20 passing unit tests</text>
+
+  <!-- GitHub Link Badge -->
+  <rect x="760" y="465" width="345" height="42" rx="8" fill="#0F172A"/>
+  <text x="932" y="491" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700" fill="#FFFFFF" text-anchor="middle">github.com/rajeshwari229080/... </text>
+</svg>
