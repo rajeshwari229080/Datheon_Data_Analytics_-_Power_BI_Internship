@@ -1,0 +1,148 @@
+// ==============================================================================
+// SUPERSTORE EXECUTIVE SALES & PROFIT DASHBOARD — PRODUCTION DAX MEASURES
+// Table Home: FactSales (or dedicated _Measures table)
+// Continuous Date Dimension: DimDate[Date]
+// ==============================================================================
+
+// ------------------------------------------------------------------------------
+// 1. CORE VOLUME & REVENUE MEASURES
+// ------------------------------------------------------------------------------
+
+Total Sales = 
+SUM(FactSales[Sales])
+
+Total Profit = 
+SUM(FactSales[Profit])
+
+Total Quantity = 
+SUM(FactSales[Quantity])
+
+Total Orders = 
+DISTINCTCOUNT(FactSales[Order ID])
+
+Total Line Items = 
+COUNTROWS(FactSales)
+
+Average Order Value = 
+DIVIDE([Total Sales], [Total Orders], 0)
+
+Profit Margin % = 
+DIVIDE([Total Profit], [Total Sales], 0)
+
+Average Discount Rate % = 
+AVERAGE(FactSales[Discount])
+
+// ------------------------------------------------------------------------------
+// 2. TIME INTELLIGENCE & YEAR-OVER-YEAR (YOY) MEASURES
+// Requires active relationship: FactSales[OrderDateKey] -> DimDate[DateKey]
+// ------------------------------------------------------------------------------
+
+Sales Previous Year = 
+CALCULATE(
+    [Total Sales],
+    DATEADD(DimDate[Date], -1, YEAR)
+)
+
+Sales YoY Growth $ = 
+[Total Sales] - [Sales Previous Year]
+
+YoY Sales Growth % = 
+DIVIDE(
+    [Sales YoY Growth $],
+    [Sales Previous Year],
+    0
+)
+
+Profit Previous Year = 
+CALCULATE(
+    [Total Profit],
+    DATEADD(DimDate[Date], -1, YEAR)
+)
+
+Profit YoY Growth $ = 
+[Total Profit] - [Profit Previous Year]
+
+YoY Profit Growth % = 
+DIVIDE(
+    [Profit YoY Growth $],
+    [Profit Previous Year],
+    0
+)
+
+Sales YTD = 
+TOTALYTD(
+    [Total Sales],
+    DimDate[Date]
+)
+
+Profit YTD = 
+TOTALYTD(
+    [Total Profit],
+    DimDate[Date]
+)
+
+Sales Previous Month = 
+CALCULATE(
+    [Total Sales],
+    DATEADD(DimDate[Date], -1, MONTH)
+)
+
+MoM Sales Growth % = 
+DIVIDE(
+    [Total Sales] - [Sales Previous Month],
+    [Sales Previous Month],
+    0
+)
+
+// ------------------------------------------------------------------------------
+// 3. CONTRIBUTION & PARETO MEASURES
+// ------------------------------------------------------------------------------
+
+Total Sales National = 
+CALCULATE(
+    [Total Sales],
+    ALL(FactSales)
+)
+
+Sales Contribution % = 
+DIVIDE(
+    [Total Sales],
+    [Total Sales National],
+    0
+)
+
+Total Profit National = 
+CALCULATE(
+    [Total Profit],
+    ALL(FactSales)
+)
+
+Profit Contribution % = 
+DIVIDE(
+    [Total Profit],
+    [Total Profit National],
+    0
+)
+
+// ------------------------------------------------------------------------------
+// 4. OPERATIONAL & RETURN MEASURES
+// ------------------------------------------------------------------------------
+
+Returned Orders Count = 
+CALCULATE(
+    [Total Orders],
+    FactSales[Is Returned] = TRUE()
+)
+
+Order Return Rate % = 
+DIVIDE(
+    [Returned Orders Count],
+    [Total Orders],
+    0
+)
+
+Average Days to Ship = 
+AVERAGEX(
+    FactSales,
+    DATEDIFF(FactSales[Order Date], FactSales[Ship Date], DAY)
+)
